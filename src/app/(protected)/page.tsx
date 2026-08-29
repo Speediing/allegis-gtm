@@ -1,6 +1,8 @@
 import { CompareTable } from "@/components/CompareTable";
+import { HeroDemo } from "@/components/HeroDemo";
 import { HeroTelemetry } from "@/components/HeroTelemetry";
 import { JobSection } from "@/components/JobSection";
+import { QuoteWall } from "@/components/QuoteWall";
 import { RosterChart } from "@/components/RosterChart";
 import { SiteNav } from "@/components/SiteNav";
 import { JOBS } from "@/data/jobs";
@@ -22,15 +24,7 @@ export default function HomePage() {
         <div className="report-hero">
           <HeroTelemetry />
           <section className="hero">
-            <div>
-              <p className="eyebrow">A working idea for Allegis Group</p>
-              <h1>The agents that work while your teams deliver.</h1>
-              <p className="hero-intro">
-                Each agent works from its own computer. It can read the brief,
-                use the tools, and return a draft for review. Your team stays
-                in control.
-              </p>
-            </div>
+            <HeroDemo />
           </section>
 
           <RosterChart />
@@ -78,6 +72,7 @@ export default function HomePage() {
 
       <div className="report">
         <CompareTable />
+        <QuoteWall />
       </div>
 
       <footer className="site-footer">

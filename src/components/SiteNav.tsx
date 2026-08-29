@@ -7,14 +7,14 @@ export function SiteNav() {
         <BrandLockup size="sm" />
       </a>
       <nav className="header-actions" aria-label="On this page">
-        <a className="text-button" href="#roster">
-          Agent fleet
-        </a>
         <a className="text-button" href="#jobs">
           Use cases
         </a>
         <a className="text-button" href="#compare">
           How it works
+        </a>
+        <a className="text-button" href="#testimonials">
+          Reactions
         </a>
       </nav>
     </header>

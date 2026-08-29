@@ -15,6 +15,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Structure
 
+- `src/components/HeroDemo.tsx` renders the interactive eight-job phone hero.
+- `src/data/hero-jobs.ts` holds the proposal-only hero threads.
 - `src/data/jobs.ts` holds the three sample workflows and produced artifacts.
 - `src/data/screens.ts` maps each demo step to the agent computer.
 - `src/components/GrokBotWindow.tsx` keeps chat on the left and computer work on the right.
