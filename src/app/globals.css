@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #20231f;
-  --muted: #686b63;
-  --paper: #f5f1e8;
-  --surface: #fbf9f4;
-  --line: #d8d3c8;
-  --accent: #632ca6;
-  --accent-dark: #4c1d82;
-  --sage: #788274;
-  --blue: #5e7180;
+  --ink: #061b31;
+  --muted: #49647e;
+  --paper: #f8f3e8;
+  --surface: #fffdf8;
+  --line: #d7dddf;
+  --accent: #005796;
+  --accent-dark: #154270;
+  --sage: #2a7c88;
+  --blue: #0494d2;
   --bg: var(--paper);
   --bg-deep: var(--ink);
   --ink-soft: var(--muted);
   --kicker: var(--accent);
   --panel: var(--surface);
-  --line-strong: #c8c3b7;
+  --line-strong: #b9c4cb;
   --shot: var(--surface);
   --shot-ink: var(--ink);
   --shot-muted: var(--muted);
@@ -309,8 +309,8 @@ button:active:not(:focus-visible),
   left: 0;
   right: 0;
   width: 100%;
-  border-bottom: 1px solid rgba(32, 35, 31, 0.08);
-  background: rgba(245, 241, 232, 0.58);
+  border-bottom: 1px solid rgba(6, 27, 49, 0.1);
+  background: rgba(248, 243, 232, 0.72);
   backdrop-filter: blur(18px);
 }
 
@@ -324,6 +324,7 @@ button:active:not(:focus-visible),
   text-decoration: none;
 }
 
+.brand-allegis,
 .brand-dd,
 .brand-sxai {
   display: block;
@@ -331,6 +332,19 @@ button:active:not(:focus-visible),
   height: auto;
   max-width: 100%;
   flex-shrink: 0;
+  object-fit: contain;
+}
+
+.brand-allegis {
+  display: inline-flex;
+  height: var(--dd-h);
+  align-items: center;
+}
+
+.brand-allegis-image {
+  display: block;
+  width: auto;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -350,12 +364,12 @@ button:active:not(:focus-visible),
 }
 
 .brand-lockup-sm {
-  --dd-h: 24px;
+  --dd-h: 16px;
 }
 
 .brand-lockup-md,
 .brand-lockup-lg {
-  --dd-h: 32px;
+  --dd-h: 18px;
 }
 
 .brand-times {
@@ -375,8 +389,8 @@ button:active:not(:focus-visible),
   border: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
   border-radius: 0.65rem;
   color: var(--ink);
-  background: rgba(251, 249, 244, 0.9);
-  box-shadow: 0 0.5rem 1.5rem rgba(32, 35, 31, 0.1);
+  background: rgba(255, 253, 248, 0.92);
+  box-shadow: 0 0.5rem 1.5rem rgba(6, 27, 49, 0.1);
   backdrop-filter: blur(14px);
   font-size: 13px;
 }
@@ -406,13 +420,13 @@ button:active:not(:focus-visible),
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: #1a1b18;
+  background: #061b31;
 }
 
 .hero-watercolor-image {
   display: block;
   width: 100%;
-  height: auto;
+  height: clamp(300px, 42vw, 620px);
   max-height: min(72vh, 820px);
   object-fit: cover;
   object-position: center 42%;
@@ -443,13 +457,26 @@ button:active:not(:focus-visible),
 
 .report-hero {
   position: relative;
+  background: var(--paper);
 }
 
 .report-hero .hero,
+.report-hero .roster,
 .report-hero .usecase-framing,
 .report-hero .metric-grid {
   position: relative;
   z-index: 1;
+}
+
+.hero-watercolor + .report {
+  z-index: 2;
+  position: relative;
+  width: min(1400px, calc(100% - 32px));
+  margin-top: clamp(-132px, -9vw, -84px);
+  padding-top: 1px;
+  border-radius: 18px 18px 0 0;
+  background: var(--paper);
+  box-shadow: 0 28px 84px rgba(6, 27, 49, 0.18);
 }
 
 .hero {
@@ -710,6 +737,17 @@ button:active:not(:focus-visible),
   mix-blend-mode: multiply;
 }
 
+.report-section.job:nth-child(2) .job-art {
+  right: auto;
+  left: 18%;
+  transform: rotate(18deg);
+}
+
+.report-section.job:nth-child(3) .job-art {
+  right: -2%;
+  transform: rotate(-15deg) scale(0.9);
+}
+
 .background-agent {
   position: relative;
   z-index: 1;
@@ -787,8 +825,8 @@ button:active:not(:focus-visible),
   border-radius: 0.8rem;
   background: color-mix(in srgb, var(--surface) 96%, white);
   box-shadow:
-    0 1px 1px rgba(32, 35, 31, 0.08),
-    0 12px 30px rgba(32, 35, 31, 0.08);
+    0 1px 1px rgba(6, 27, 49, 0.08),
+    0 12px 30px rgba(6, 27, 49, 0.08);
 }
 
 .story-ui-bar {
@@ -909,7 +947,7 @@ button:active:not(:focus-visible),
 
 .story-transcript-ui {
   background:
-    linear-gradient(155deg, rgba(99, 44, 166, 0.08), transparent 55%),
+    linear-gradient(155deg, rgba(4, 148, 210, 0.1), transparent 55%),
     var(--surface);
 }
 
@@ -950,7 +988,7 @@ button:active:not(:focus-visible),
 }
 
 .story-deck-ui {
-  background: #1b1820;
+  background: #061b31;
 }
 
 .story-deck-ui .story-ui-bar {
@@ -975,12 +1013,12 @@ button:active:not(:focus-visible),
   border-radius: 0.38rem;
   color: #fff;
   background:
-    radial-gradient(circle at 90% 12%, rgba(99, 44, 166, 0.8), transparent 34%),
-    #29242f;
+    radial-gradient(circle at 90% 12%, rgba(4, 148, 210, 0.72), transparent 34%),
+    #0b2d4c;
 }
 
 .story-mini-slide small {
-  color: #c6a7ea;
+  color: #a4d6f3;
   font-family: var(--mono);
   font-size: 0.45rem;
   font-weight: 700;
@@ -1001,8 +1039,8 @@ button:active:not(:focus-visible),
   width: fit-content;
   padding: 0.19rem 0.34rem;
   border-radius: 0.2rem;
-  color: #1b1820;
-  background: #d9b8ff;
+  color: #061b31;
+  background: #fcd370;
   font-size: 0.48rem;
   font-weight: 700;
 }
@@ -1013,7 +1051,7 @@ button:active:not(:focus-visible),
 
 .story-email-ui {
   background:
-    linear-gradient(145deg, rgba(99, 44, 166, 0.06), transparent 58%),
+    linear-gradient(145deg, rgba(4, 148, 210, 0.08), transparent 58%),
     var(--surface);
 }
 
@@ -1191,7 +1229,7 @@ button:active:not(:focus-visible),
 
 .story-research-ui {
   background:
-    radial-gradient(circle at 50% 60%, rgba(99, 44, 166, 0.11), transparent 48%),
+    radial-gradient(circle at 50% 60%, rgba(4, 148, 210, 0.12), transparent 48%),
     var(--surface);
 }
 
@@ -1275,7 +1313,7 @@ button:active:not(:focus-visible),
 }
 
 .story-outreach-ui {
-  background: #1b1820;
+  background: #061b31;
 }
 
 .story-outreach-ui .story-ui-bar {
@@ -1311,8 +1349,8 @@ button:active:not(:focus-visible),
   height: 1.05rem;
   place-items: center;
   border-radius: 50%;
-  color: #1b1820;
-  background: #d9b8ff;
+  color: #061b31;
+  background: #fcd370;
   font-size: 0.5rem;
   font-weight: 800;
 }
@@ -1456,9 +1494,9 @@ button:active:not(:focus-visible),
   position: relative;
   z-index: 1;
   min-height: 0;
+  padding: 0.85rem;
   overflow: hidden;
-  aspect-ratio: 1024 / 676;
-  background: #0a0a0a;
+  background: var(--paper);
 }
 
 .heard-slide img {
@@ -1539,7 +1577,20 @@ button:active:not(:focus-visible),
 }
 
 .leave-heard.size-sm .heard-slide {
-  aspect-ratio: 1024 / 676;
+  padding: 0.4rem;
+}
+
+.leave-final-artifact {
+  padding: clamp(1rem, 3vw, 2rem);
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.72), transparent),
+    var(--paper);
+  box-shadow: 0 22px 60px rgba(6, 27, 49, 0.12);
+}
+
+.leave-final-artifact > .art {
+  width: min(100%, 52rem);
+  margin: 0 auto;
 }
 
 .leave-heard.size-sm .heard-bar {
@@ -1860,7 +1911,7 @@ button:active:not(:focus-visible),
 
 .leave-plan-next {
   grid-column: 1 / -1;
-  color: #c9c6ba;
+  color: #b8c8d3;
   font-family: var(--mono);
   font-size: 0.62rem;
   font-weight: 650;
@@ -2027,7 +2078,7 @@ button:active:not(:focus-visible),
 }
 
 .leave-out-page .leave-kicker {
-  color: #c9c6ba;
+  color: #b8c8d3;
 }
 
 .leave-out-page h4 {
@@ -2041,7 +2092,7 @@ button:active:not(:focus-visible),
 
 .leave-out-page p {
   margin: 0;
-  color: #c9c6ba;
+  color: #b8c8d3;
   font-size: 0.9rem;
   line-height: 1.45;
 }
@@ -2067,7 +2118,7 @@ button:active:not(:focus-visible),
   color: #111;
   background: #fff;
   box-shadow:
-    0 1.5rem 3rem rgba(32, 35, 31, 0.11),
+    0 1.5rem 3rem rgba(6, 27, 49, 0.11),
     inset 0 0 0 1px rgba(17, 17, 17, 0.08);
   margin: -5.25rem 0;
   transform: scale(0.7);
@@ -2492,7 +2543,7 @@ button:active:not(:focus-visible),
 }
 
 .leave-reply .leave-kicker {
-  color: #c9c6ba;
+  color: #b8c8d3;
 }
 
 .leave-reply-meta {
@@ -2573,7 +2624,7 @@ button:active:not(:focus-visible),
 }
 
 .leave-after .leave-kicker {
-  color: #c9c6ba;
+  color: #b8c8d3;
 }
 
 .leave-weak {
@@ -3855,7 +3906,7 @@ button:active:not(:focus-visible),
 
 .site-footer p {
   margin: 0;
-  color: #c9c6ba;
+  color: #b8c8d3;
   font-size: 13px;
 }
 
@@ -3873,10 +3924,10 @@ button:active:not(:focus-visible),
 }
 
 .footer-contact a {
-  color: #c9c6ba;
+  color: #b8c8d3;
   font-size: 0.82rem;
   text-decoration: underline;
-  text-decoration-color: rgba(201, 198, 186, 0.45);
+  text-decoration-color: rgba(184, 200, 211, 0.45);
   text-underline-offset: 0.2rem;
 }
 
@@ -3888,20 +3939,27 @@ button:active:not(:focus-visible),
 }
 
 .login-shell {
+  position: relative;
   min-height: 100vh;
   display: grid;
   place-items: center;
   padding: 32px 20px 48px;
-  background: var(--paper);
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(6, 27, 49, 0.18), rgba(6, 27, 49, 0.46)),
+    url("/brand/allegis-watercolor.svg") center / cover no-repeat;
 }
 
 .login-card {
+  position: relative;
+  z-index: 1;
   width: min(480px, 100%);
   padding: clamp(32px, 6vw, 58px) clamp(28px, 5vw, 48px) 42px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  box-shadow: none;
+  background: rgba(255, 253, 248, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 18px;
+  box-shadow: 0 30px 90px rgba(6, 27, 49, 0.28);
+  backdrop-filter: blur(18px);
 }
 
 .login-card .eyebrow {
@@ -3937,7 +3995,7 @@ button:active:not(:focus-visible),
   background: var(--paper);
   color: var(--ink);
   border: 1px solid var(--line);
-  border-radius: 3px;
+  border-radius: 7px;
   outline: none;
 }
 
@@ -3952,7 +4010,7 @@ button:active:not(:focus-visible),
   background: var(--ink);
   color: var(--paper);
   border: 0;
-  border-radius: 3px;
+  border-radius: 7px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 550;
@@ -4031,6 +4089,53 @@ button:active:not(:focus-visible),
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
+}
+
+.org-computer {
+  position: relative;
+  display: grid;
+  grid-row: 1 / span 2;
+  width: 2.6rem;
+  height: 2.2rem;
+  place-items: center;
+}
+
+.org-computer svg {
+  width: 2.6rem;
+  height: auto;
+  overflow: visible;
+}
+
+.org-computer rect {
+  fill: color-mix(in srgb, currentColor 10%, var(--surface));
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+
+.org-computer path:first-of-type {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+
+.org-computer path:last-of-type {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.org-computer i {
+  position: absolute;
+  top: 0.42rem;
+  right: 0.28rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border: 2px solid var(--surface);
+  border-radius: 999px;
+  background: #2b8a58;
+  box-shadow: 0 0 0 2px rgba(43, 138, 88, 0.14);
 }
 
 .org-name {

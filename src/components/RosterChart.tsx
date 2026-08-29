@@ -1,18 +1,16 @@
 import { FLEET, type FleetBot } from "@/data/fleet";
 
-function initials(bot: FleetBot) {
-  if (bot.mark) return bot.mark;
-  const parts = bot.name.split(/\s+/).filter(Boolean);
-  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
-  return `${parts[0][0] || ""}${parts[parts.length - 1][0] || ""}`.toUpperCase();
-}
-
-function isLight(hex: string) {
-  if (!hex.startsWith("#") || hex.length < 7) return false;
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-  return (r * 299 + g * 587 + b * 114) / 1000 > 180;
+function AgentComputer({ color }: { color: string }) {
+  return (
+    <span className="org-computer" style={{ color }} aria-hidden>
+      <svg viewBox="0 0 52 38">
+        <rect x="6" y="3" width="40" height="27" rx="3" />
+        <path d="M2 33h48l-3 3H5z" />
+        <path d="M12 10h14M12 15h24M12 20h18" />
+      </svg>
+      <i />
+    </span>
+  );
 }
 
 function Box({
@@ -25,16 +23,13 @@ function Box({
   const className = chief ? "org-box is-chief" : "org-box";
   const body = (
     <>
-      <span
-        className="org-avatar"
-        style={{
-          background: bot.color,
-          color: isLight(bot.color) ? "#111" : "#fff",
-        }}
-        aria-hidden
-      >
-        {initials(bot)}
-      </span>
+      {bot.seat ? (
+        <span className="org-avatar" style={{ background: bot.color }} aria-hidden>
+          {bot.mark}
+        </span>
+      ) : (
+        <AgentComputer color={bot.color} />
+      )}
       <span className="org-name">{bot.name}</span>
       <span className="org-blurb">{bot.blurb}</span>
     </>
@@ -59,11 +54,11 @@ export function RosterChart() {
 
   return (
     <section id="roster" className="roster">
-      <h2>A background team for every sales rep</h2>
+      <p className="eyebrow">The fleet</p>
+      <h2>A small fleet, each on its own computer.</h2>
       <p className="section-lede">
-        The work itself is the trigger. A call starts, an email lands, or an
-        account enters the list — and the right agent picks it up. They keep
-        working after the laptop closes. Drafts stay drafts until the rep sends.
+        Your team gives each agent a clear part of the work. The agents open
+        their own computers, pass work between them, and stop for approval.
       </p>
 
       <div className="org" role="tree">

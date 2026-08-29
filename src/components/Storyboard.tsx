@@ -140,7 +140,7 @@ function LiveVisual({ visual }: { visual: StoryVisual }) {
           </div>
           <footer>
             <span className="story-wave">||||||||||||</span>
-            Granola is listening
+            Agent is listening
           </footer>
         </div>
       );
@@ -153,7 +153,7 @@ function LiveVisual({ visual }: { visual: StoryVisual }) {
           </header>
           <blockquote>
             <strong>{visual.speaker}</strong>
-            “{visual.quote}”
+            &quot;{visual.quote}&quot;
           </blockquote>
           <footer>
             {visual.signals.map((signal) => (
@@ -201,7 +201,7 @@ function LiveVisual({ visual }: { visual: StoryVisual }) {
       return (
         <div className="story-ui story-answers-ui" aria-hidden>
           <header className="story-ui-bar">
-            <strong>Grok checked the sources</strong>
+            <strong>Agent checked the sources</strong>
             <span>{visual.status}</span>
           </header>
           <ul>
@@ -253,7 +253,7 @@ function LiveVisual({ visual }: { visual: StoryVisual }) {
               <span key={source}>{source}</span>
             ))}
           </div>
-          <footer>Public evidence found</footer>
+          <footer>Working set opened</footer>
         </div>
       );
     case "three-why":
@@ -284,7 +284,7 @@ function LiveVisual({ visual }: { visual: StoryVisual }) {
               <p key={channel}>
                 <span>{index + 1}</span>
                 <strong>{channel}</strong>
-                <small>Personalized</small>
+                <small>Prepared</small>
               </p>
             ))}
           </div>

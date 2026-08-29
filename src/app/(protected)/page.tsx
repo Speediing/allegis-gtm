@@ -1,7 +1,7 @@
 import { CompareTable } from "@/components/CompareTable";
 import { HeroTelemetry } from "@/components/HeroTelemetry";
 import { JobSection } from "@/components/JobSection";
-import { QuoteWall } from "@/components/QuoteWall";
+import { RosterChart } from "@/components/RosterChart";
 import { SiteNav } from "@/components/SiteNav";
 import { JOBS } from "@/data/jobs";
 
@@ -12,7 +12,7 @@ export default function HomePage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="hero-watercolor-image"
-          src="/brand/watercolor-pad.png"
+          src="/brand/allegis-watercolor.svg"
           alt=""
         />
         <SiteNav />
@@ -23,24 +23,28 @@ export default function HomePage() {
           <HeroTelemetry />
           <section className="hero">
             <div>
-              <p className="eyebrow">A proactive agent for every Datadog rep</p>
-              <h1>The agents that work while your reps sell.</h1>
+              <p className="eyebrow">A working idea for Allegis Group</p>
+              <h1>The agents that work while your teams deliver.</h1>
               <p className="hero-intro">
-                Grok Bot listens to calls, watches the inbox, and researches
-                accounts in the background. Work triggers it — not another
-                prompt.
+                Each agent works from its own computer. It can read the brief,
+                use the tools, and return a draft for review. Your team stays
+                in control.
               </p>
             </div>
           </section>
 
+          <RosterChart />
+
           <section className="usecase-framing">
-            <p className="eyebrow">Three sample use cases</p>
+            <p className="eyebrow">Three examples for Allegis Group</p>
             <h2>
-              Grok Bot gives every seller their own fleet of always-available
-              agent teammates. Anything your sellers do today can be done
-              through Grok Bot.
+              Start with work the team already understands, then judge the
+              artifact at the end.
             </h2>
-            <p>These are three examples from millions — not the boundary.</p>
+            <p>
+              The team sets the goal and the review gate. The fleet handles the
+              background work.
+            </p>
           </section>
 
           <div className="metric-grid">
@@ -69,24 +73,23 @@ export default function HomePage() {
 
       <div className="orbit-break" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/watercolor-orbit.png" alt="" />
+        <img src="/brand/allegis-watercolor.svg" alt="" />
       </div>
 
       <div className="report">
         <CompareTable />
-        <QuoteWall />
       </div>
 
       <footer className="site-footer">
         <div>
-          <p className="footer-title">Cursor for Datadog</p>
-          <p>Grok Bot for Datadog sales</p>
+          <p className="footer-title">Cursor for Allegis Group</p>
+          <p>SpaceXAI agent fleet</p>
         </div>
         <address className="footer-contact">
-          <p>Datadog&apos;s existing Cursor contact</p>
-          <strong>Madeline Ingleby</strong>
-          <a href="mailto:madeline.ingleby@cursor.com">
-            madeline.ingleby@cursor.com
+          <p>Your Cursor contact</p>
+          <strong>Mike Mooney</strong>
+          <a href="mailto:michael.mooney@cursor.com">
+            michael.mooney@cursor.com
           </a>
         </address>
       </footer>

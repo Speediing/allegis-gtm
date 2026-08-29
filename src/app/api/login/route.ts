@@ -37,7 +37,15 @@ export async function POST(request: Request) {
     ? NextResponse.json({ ok: true, next })
     : NextResponse.redirect(new URL(next, request.url), { status: 303 });
 
-  response.cookies.set(AUTH_COOKIE, await sessionToken(), {
+  const token = await sessionToken();
+  if (!token) {
+    return NextResponse.json(
+      { ok: false, error: "Site access is not configured." },
+      { status: 503 },
+    );
+  }
+
+  response.cookies.set(AUTH_COOKIE, token, {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",

@@ -1,31 +1,32 @@
-# Grok Bot for Datadog GTM
+# Allegis Group x SpaceXAI
 
-Passworded site. Grok Bot from SpaceXAI, for Datadog GTM.
-
-## What it is
-
-Three GTM jobs on one page. Each job has a short problem statement, an interactive Grok Bot demo, and the matching Krista Letz clips under that demo. Below that: a light index of the clips and the public Grok Bot quote wall.
+Passworded customer leave-behind for Allegis Group.
 
 ## Run locally
 
 ```bash
 cp .env.example .env.local
+# Add SITE_PASSWORD to .env.local
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). Default password is `land2expand` (override with `SITE_PASSWORD`).
+Open [http://localhost:3000](http://localhost:3000).
 
-## Krista clips
+## Structure
 
-Download into `private/media/krista-clips/` from the GitHub release (served only through the passworded `/api/media/...` route):
+- `src/data/jobs.ts` holds the three sample workflows and produced artifacts.
+- `src/data/screens.ts` maps each demo step to the agent computer.
+- `src/components/GrokBotWindow.tsx` keeps chat on the left and computer work on the right.
+- `src/components/Storyboard.tsx` shows the scene-in-time flow.
+- `src/components/ChapterPayoff.tsx` renders the final artifact.
+- `src/lib/auth.ts` validates `SITE_PASSWORD` on the server and issues an HTTP-only session cookie.
 
-```bash
-gh release download krista-gtm-clips-720p-2026-08-26 \
-  --repo Speediing/grok-bot-quotes \
-  --dir private/media/krista-clips
-```
+## Brand source
 
-## Deploy
-
-Preview only under the `jasonwiker` Vercel team, project name `datadog-cro`. Set `SITE_PASSWORD=land2expand`. Do not promote to a public production domain until Jason says so.
+`public/brand/allegis-group-wordmark.png` is the current Allegis Group mark
+published by Allegis Group in 2018. Its
+[archive record](https://commons.wikimedia.org/wiki/File:Allegis_Group_company_logo.png)
+identifies
+[allegisgroup.com](https://www.allegisgroup.com/) as the source and Allegis
+Group as the author.
